@@ -1,24 +1,17 @@
 <?php
-  $name = $email = $phone = $gen_rad1 = $gen_rad2 = $gen_rad3 = "";
-
   if (isset($_POST['name']))
     $name = $_POST['name'];
-  if (isset($_POST['email']))
-    $email = $_POST['email'];
-  if (isset($_POST['phone']))
-    $phone = $_POST['phone'];
-  if (isset($_POST['gen_rad1']))
-    $gen_rad1 = $_POST['gen_rad1'];
-  if (isset($_POST['gen_rad2']))
-    $gen_rad2 = $_POST['gen_rad2'];
-  if (isset($_POST['gen_rad3']))
-    $gen_rad3 = $_POST['gen_rad3'];
   if (isset($_POST['totalTime']))
     $totalTime = $_POST['totalTime'];
 
+  if (!(empty($name) && empty($totalTime))) {
+    $add = new Leaderboard($name, $totalTime);
+    $add->add_to_database();
+  }
+
   function print_leaderboard() {
-    $top15_lb = new Leaderboard($name, $totalTime);
-    return $top15_lb->display_leaderboards();
+    $top20_lb = new Leaderboard('', '');
+    return $top20_lb->display_leaderboards();
   }
 
   class Leaderboard {
@@ -54,7 +47,7 @@
 
       $query = <<<SQL
           SELECT * FROM CRP3_leaderboards
-          ORDER BY TIME ASC LIMIT 15;
+          ORDER BY TIME ASC LIMIT 20;
 SQL;
 
       if (!$result = $conn->query($query)) {
@@ -92,6 +85,9 @@ SQL;
       while($row = $names->fetch_assoc()) {
         if ($row['NAME'] == $name_to_add) {  // name is already in table
           $name_in_table = TRUE;
+          if ($row['TIME'] > $this->totalTime) {  // time is less than time in table
+            $conn->query("UPDATE CRP3_leaderboards SET TIME=$this->totalTime WHERE NAME='$name_to_add'");
+          }
           return;  // exit function
         }
       }
@@ -103,7 +99,7 @@ SQL;
 SQL;
 
       if ($conn->query($insert) === TRUE) {
-        echo "Successfully inserted record";
+        // do nothing
       } else {
         die("Error with insert: " . $conn->error);
       }

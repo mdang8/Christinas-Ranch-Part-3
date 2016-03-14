@@ -1,71 +1,224 @@
 @import url(https://fonts.googleapis.com/css?family=Cabin);
 
-html {
-  margin: 0;
-}
+@media only screen and (min-device-width: 480px) {
+  html {
+    margin: 0;
+  }
 
-body {
-  font-family: "Cabin", sans-serif;
-  background-color: rgb(225, 226, 189);
-  margin: 0;
-  padding: 0;
-  height: 1200px;
-}
+  body {
+    font-family: "Cabin", sans-serif;
+    background-color: rgb(225, 226, 189);
+    margin: 0;
+    padding: 0;
+  }
 
-#header {
-  background-image: url(03_waterfall.jpg);
-  background-size: cover;
-  background-position: center;
-  display: block;
-  width: 100%;
-  height: 278px;
-}
+  #header {
+    background-image: url(03_waterfall.jpg);
+    background-size: cover;
+    background-position: center;
+    display: block;
+    width: 100%;
+    height: 278px;
+  }
 
-#leaderboards {
-  float: left;
-  border: 1px solid black;
-}
+  #leaderboards {
+    background-color: black;
+    color: #00ff00;
+    float: left;
+    text-align: center;
+    width: 20%;
+  }
 
-#leaderboards span {
-  font-size: 20px;
-}
+  #leaderboards span {
+    font-size: 20px;
+    margin: auto;
+    text-align: center;
+  }
 
-#leaderboards-table {
-  text-align: center;
-  vertical-align: middle;
-}
+  #leaderboards-table {
+    text-align: center;
+    vertical-align: middle;
+  }
 
-form {
-  display: block;
-  margin: auto;
-  margin-top: -90px;
-  width: 50%;
-  height: 80%;
-  background-color: white;
-  webkit-box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
-  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
-}
+  form {
+    display: block;
+    margin: auto;
+    margin-top: -90px;
+    margin-bottom: 100px;
+    width: 50%;
+    height: 80%;
+    background-color: white;
+    webkit-box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
+  }
 
-#accentBanner {
-  background-color: rgb(154, 158, 34);
-  height: 10px;
-}
+  #accentBanner {
+    background-color: rgb(154, 158, 34);
+    height: 10px;
+  }
 
-#formTitle {
-  font-size: 30px;
-  line-height: 90%;
-  text-align: center;
-  vertical-align: middle;
-  margin-top: 40px;
-  margin-bottom: 60px;
-}
+  #formTitle {
+    font-size: 30px;
+    line-height: 90%;
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 40px;
+    margin-bottom: 60px;
+  }
 
-.inputs {
-  margin-left: 10%;
-  padding: 30px;
-}
+  .inputs {
+    margin-left: 10%;
+    padding: 30px;
+  }
 
-.inputTitle {
-  font-size: 20px;
-  margin-bottom: 20px;
+  .inputTitle {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  #nameInput {
+    width: 75%;
+  }
+
+  #emailInput {
+    width: 75%;
+  }
+
+  #phoneInput {
+    width: 75%;
+  }
+
+  #genTextInput {
+    width: 75%;
+  }
+
+  #submitButton {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    width: 50%;
+    font-size: 16px;
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 20px;
+  }
+}
+/* CSS for mobile deivces */
+@media only screen and (max-device-width: 480px) {
+  html {
+    margin: 0;
+  }
+
+  body {
+    font-family: "Cabin", sans-serif;
+    background-color: rgb(225, 226, 189);
+    margin: 0;
+    padding: 0;
+  }
+
+  #header {
+    background-image: url(03_waterfall.jpg);
+    background-size: cover;
+    background-position: center;
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 10%;
+  }
+
+  #leaderboards {
+    background-color: black;
+    color: #00ff00;
+    text-align: center;
+    display: block;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    position: absolute;
+    top: 10%;
+  }
+
+  #leaderboards span {
+    font-size: 18px;
+    margin: auto;
+    text-align: center;
+  }
+
+  #leaderboards-table {
+    font-size: 16px;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  #form-container {
+    display: block;
+    position: absolute;
+  }
+
+  form {
+    width: 100%;
+    height: 80%;
+    background-color: white;
+    webkit-box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
+  }
+
+  #accentBanner {
+    background-color: rgb(154, 158, 34);
+    height: 5%;
+  }
+
+  #formTitle {
+    font-size: 24px;
+    line-height: 90%;
+    text-align: center;
+    vertical-align: middle;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+
+  .inputs {
+    padding: 25px;
+  }
+
+  .inputTitle {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  #nameInput {
+    width: 75%;
+  }
+
+  #emailInput {
+    width: 75%;
+  }
+
+  #phoneInput {
+    width: 75%;
+  }
+
+  #genTextInput {
+    width: 75%;
+  }
+
+  #submitButton {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    width: 50%;
+    font-size: 18px;
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 20px;
+  }
 }
