@@ -1,0 +1,110 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+@media only screen and (min-device-width: 480px) {
+  html {
+    margin: 0;
+  }
+
+  body {
+    font-family: "Roboto", sans-serif;
+    background-color: rgb(225, 226, 189);
+    margin: 0;
+    padding: 0;
+  }
+
+  #header {
+    background-image: url(03_waterfall.jpg);
+    background-size: cover;
+    background-position: center;
+    display: block;
+    width: 100%;
+    height: 270px;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  p {
+    text-align: center;
+  }
+
+  #leaderboards {
+    background-color: black;
+    color: #00ff00;
+    float: left;
+    text-align: center;
+    width: 60%;
+    display: block;
+    margin-top: 50px;
+    margin-left: 20%;
+  }
+
+  #leaderboards span {
+    font-size: 20px;
+    margin: auto;
+    text-align: center;
+  }
+
+  #leaderboards-table {
+    text-align: center;
+    vertical-align: middle;
+    display: block;
+    margin-left: 35%;
+  }
+}
+
+/* CSS for mobile deivces */
+@media only screen and (max-device-width: 480px) {
+  html {
+    margin: 0;
+  }
+
+  body {
+    font-family: "Roboto", sans-serif;
+    background-color: rgb(225, 226, 189);
+    margin: 0;
+    padding: 0;
+  }
+
+  #header {
+    background-image: url(03_waterfall.jpg);
+    background-size: cover;
+    background-position: center;
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 10%;
+  }
+
+  h2 {
+    margin-top: 25%;
+    text-align: center;
+  }
+
+  p {
+    text-align: center;
+  }
+
+  #leaderboards {
+    background-color: black;
+    color: #00ff00;
+    text-align: center;
+    display: block;
+    width: 90%;
+    margin-left: 5%;
+    margin-bottom: 10px;
+  }
+
+  #leaderboards span {
+    font-size: 18px;
+    margin: auto;
+    text-align: center;
+  }
+
+  #leaderboards-table {
+    font-size: 16px;
+    text-align: center;
+  }
+}

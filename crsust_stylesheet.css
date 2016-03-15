@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Cabin);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
 
 @media only screen and (min-device-width: 480px) {
   html {
@@ -6,7 +6,7 @@
   }
 
   body {
-    font-family: "Cabin", sans-serif;
+    font-family: "Roboto", sans-serif;
     background-color: rgb(225, 226, 189);
     margin: 0;
     padding: 0;
@@ -66,6 +66,17 @@
     margin-bottom: 60px;
   }
 
+  input[type="text"] {
+    padding: 10px;
+    border: none;
+    border-bottom: solid 2px #c9c9c9;
+    transition: border 0.3s;
+  }
+
+  input[type="text"].focus {
+    border-bottom: solid 2px #969696;
+  }
+
   .inputs {
     margin-left: 10%;
     padding: 30px;
@@ -107,6 +118,7 @@
     margin-bottom: 20px;
   }
 }
+
 /* CSS for mobile deivces */
 @media only screen and (max-device-width: 480px) {
   html {
@@ -114,7 +126,7 @@
   }
 
   body {
-    font-family: "Cabin", sans-serif;
+    font-family: "Roboto", sans-serif;
     background-color: rgb(225, 226, 189);
     margin: 0;
     padding: 0;

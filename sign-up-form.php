@@ -36,15 +36,15 @@
         <div id="formTitle">★ Christina's Ranch Part III: How Fast Can U Sign-Up? ★</div>
         <div id="name-container" class="inputs">
           <span class="inputTitle">Full Name:</span></br></br>
-          <input type="text" id="nameInput" name="name" required>
+          <input type="text" id="nameInput" name="name" placeholder="Your answer" required>
         </div>
         <div id="email-container" class="inputs">
-          <span class="inputTitle">Email Address:</span></br></br>
-          <input type="text" id="emailInput" name="email" required>
+          <span class="inputTitle">Email Address (Husky pls):</span></br></br>
+          <input type="text" id="emailInput" name="email" placeholder="Your answer" required>
         </div>
         <div id="phone-container" class="inputs">
           <span class="inputTitle">Random 10-digit String of Numbers:</span></br></br>
-          <input type="text" id="phoneInput" name="phone" required>
+          <input type="text" id="phoneInput" name="phone" placeholder="Your answer" required>
         </div>
         <div id="generic-radio1-container" class="inputs">
           <span class="inputTitle">Generic Yes/No Question #1:</span></br></br>
@@ -64,8 +64,8 @@
           <input type="radio" name="gen_rad3" value="v4">4
         </div>
         <div id="generic-text-input-container" class="inputs">
-          <span class="inputTitle">Generic Text Input Question:</span></br></br>
-          <input type="text" id="genTextInput" name="gen_text1" required>
+          <span class="inputTitle">You're required to write a comment here:</span></br></br>
+          <input type="text" id="genTextInput" name="gen_text1" placeholder="Your answer" required>
         </div>
         <input type="submit" id="submitButton" value="Submit">
       </form>
@@ -83,14 +83,44 @@
       var totalTime = (endTime - startTime) / 1000;  // time it took from page load to form completion (this gets logged)
 
       var name = document.getElementById('nameInput').value;
+      var email = document.getElementById('emailInput').value;
+      var phone = document.getElementById('phoneInput').value;
 
+      var nameSplit = name.split(' ');
+      var validEmail = false;
+      var validPhone = false;
+      var emailLower = email.toLowerCase();
+      var i;
+
+      if (email.indexOf("neu.edu") < 0) {
+        alert("Not a valid Northeastern email.");
+        return false;
+      }
+
+      for (i = 0; i < nameSplit.length; i++) {
+        nameSplit[i] = nameSplit[i].toLowerCase();
+        if (email.indexOf(nameSplit[i]) > -1) {
+          validEmail = true;
+        }
+      }
+
+      if (!validEmail) {
+        alert("I don't think that's your Husky email...");
+        return false;
+      }
+
+      if (phone.length < 10) {
+        alert("That isn't a 10-digit string, pls.");
+        return false;
+      }
+      
       $.ajax({
         type: 'post',
         url: 'includes/main.php',
         data: {name: name, totalTime: totalTime},
         success: function(data) {
           console.log("Data successfully sent!");
-          location.reload();
+          window.location.replace("CRP3-confirmation.php");
         }
       });
     }
